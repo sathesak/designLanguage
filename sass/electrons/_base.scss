@@ -1,0 +1,60 @@
+*{
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    text-decoration: none;
+    border: none;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins-Bold.eot');
+    src: url('Poppins-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Poppins-Bold.woff2') format('woff2'),
+        url('Poppins-Bold.woff') format('woff'),
+        url('Poppins-Bold.ttf') format('truetype'),
+        url('Poppins-Bold.svg#Poppins-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins-Regular.eot');
+    src: url('Poppins-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Poppins-Regular.woff2') format('woff2'),
+        url('Poppins-Regular.woff') format('woff'),
+        url('Poppins-Regular.ttf') format('truetype'),
+        url('Poppins-Regular.svg#Poppins-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins-Medium.eot');
+    src: url('Poppins-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Poppins-Medium.woff2') format('woff2'),
+        url('Poppins-Medium.woff') format('woff'),
+        url('Poppins-Medium.ttf') format('truetype'),
+        url('Poppins-Medium.svg#Poppins-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+body{
+    padding: 2px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+section{
+    padding: 40px 0;
+}

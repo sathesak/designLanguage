@@ -1,0 +1,21 @@
+{
+    "liveSassCompile.settings.excludeList": [
+        "sass/*[!(preLoad|postLoad)].scss"
+    ],
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "/css"
+        },
+        {
+            "extensionName": ".min.css",
+            "format": "compressed",
+            "savePath": "/css"
+        }
+    ],
+    "liveSassCompile.settings.generateMap": false,
+    "liveServer.settings.CustomBrowser": "firefox",
+    "php.executablePath": "C:\\xampp\\php\\php.exe",
+    "php.validate.executablePath": "C:\\xampp\\php\\php.exe", 
+}

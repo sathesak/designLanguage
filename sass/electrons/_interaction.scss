@@ -1,0 +1,12 @@
+.focus{
+    box-shadow: 0 0 0 3px $focus;
+}
+
+.hover{
+    border: 3px solid;
+    margin: -1px;
+}
+
+.checked{
+    background: $black;
+}
