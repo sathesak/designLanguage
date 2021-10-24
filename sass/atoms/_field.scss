@@ -1,0 +1,12 @@
+.txtFld{
+    border: 2px solid $black;
+    @extend .brdRnd;
+
+    &:hover{
+        @extend .hover;
+    }
+
+    &:focus{
+        @extend .focus;
+    }
+}

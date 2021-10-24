@@ -1,0 +1,124 @@
+input[type="checkbox"],
+input[type="radio"]{
+    border: 0;
+    width:0;
+    height: 0;
+
+    &:focus{
+        & + label{
+            span{
+                @extend .focus;
+            }
+        }
+    }
+
+    &:checked{
+        & + label{
+            span{
+                @extend .checked;
+            }
+        }
+    } 
+
+    & + label{
+
+        &:hover{
+            cursor: pointer;
+    
+            span{
+                @extend .hover;
+                margin: -1px 10px -6px -4px;
+            }
+        }
+
+        span {
+            border: 2px solid $black;
+            width: 25px;
+            height: 25px;
+            margin: 0 10px -6px -3px;
+            display: inline-block;
+            @extend .brdRnd;
+    
+            &:before{
+                content:'';
+                position: absolute;
+                border-left:2px solid $white;
+                border-bottom:2px solid $white;
+                width: 10px;
+                height: 5px;
+                top: 5px;
+                left: 5px;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+}
+
+input[type="radio"]{
+
+    & + label{
+        padding-right: 10px;
+        
+        span{
+            border-radius: 50%;
+    
+            &:before{
+                content:'';
+                position: absolute;
+                border: none;
+                width: 11px;
+                height: 11px;
+                background: $white;
+                border-radius: 50%;
+                top: 5px;
+                left: 5px;
+            }
+        }
+    }
+
+    &.option{
+
+        & + label{
+            border: 2px solid $black;
+            padding: 10px 10 10px 50px;
+            @extend .brdRnd;
+
+            
+        }
+
+        &:hover{
+            & + label{
+                @extend .hover;
+                border-color: $black;
+                padding: 10px 10px 10px 11px;
+                span{
+                    border: 2px solid $black;
+                }
+            }
+        }
+
+        &:focus{
+            & + label{
+                @extend .focus;
+
+                span{
+                    box-shadow: none;
+                }
+            }
+        }
+
+        &:checked{
+            & + label{
+                background: $black;
+                color: $white;
+
+                span{
+                    border-color: $white;
+                }
+            }
+        }
+        
+    }
+
+}
