@@ -10,3 +10,85 @@
         @extend .focus;
     }
 }
+
+.txtSign,
+.dd{
+    position: relative;
+    display: inline-block;
+
+    &:before,
+    &:after{
+        content: '';
+        position: absolute;
+        z-index: 1;
+    }
+}
+
+.txtSign{
+
+    .txtFld{
+        padding: 10px 10px 10px 60px;
+    }
+    
+    &:before{
+        min-width: 30px;
+        height: 100%;
+        text-align: center;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        background: $black;
+        color: $white;
+        padding: 0 10px;
+        line-height: 3rem;
+    }
+
+    &.pnd{
+        &:before{
+            content:'£';
+        }
+    }
+
+    &.eur{
+        &:before{
+            content:'€';
+        }
+    }
+
+    &.rps{
+        &:before{
+            content:'₹';
+            font-family: none;
+        }
+    }
+
+    &.pnd{
+        &:before{
+            content:'£';
+        }
+    }
+
+    &.dlr{
+        &:before{
+            content:'$';
+        }
+    }
+
+    &.gb{
+        &:before{
+            content:'GB';
+        }
+    }
+
+}
+
+.dd{
+    &:after{
+        top: 50%;
+        right: 20px;
+        width: 10px;
+        height: 10px;
+        border-right: 2px solid $black;
+        border-bottom: 2px solid $black;
+        transform: rotate(45deg) translateY(calc(-50% - 6px));
+    }
+}

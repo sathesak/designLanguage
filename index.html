@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.min.css">
-    <title>Document</title>
+    <title>Design system</title>
 </head>
 <body>
     <header>
@@ -47,50 +47,128 @@
             <h2>
                 Text
             </h2>
-    
-            <p>
-                This is text field
-            </p>
-    
-            <input type="text" class="txtFld">
+
+            <div>
+                <label for="txtFld">
+                    This is a text field <br>
+                    <input type="text" class="txtFld" id="txtFld">
+                </label>
+            </div>
+
+            <div>
+                <label for="pound">
+                    Pound field <br>
+                    <span class="txtSign pnd">
+                        <input type="text" class="txtFld" id="pound">
+                    </span>
+                </label>
+            </div>
+
+            <div>
+                <label for="euro">
+                    Euro sign <br>
+                    <span class="txtSign eur">
+                        <input type="text" class="txtFld" id="euro">
+                    </span>
+                </label>
+            </div>
+
+            <div>
+                <label for="dollor">
+                    Dollor sign <br>
+                    <span class="txtSign dlr">
+                        <input type="text" class="txtFld" id="dollor">
+                    </span>
+                </label>
+            </div>
+
+            <div>
+                <label for="rupee">
+                    Rupee sign <br>
+                    <span class="txtSign rps">
+                        <input type="text" class="txtFld" id="rupee">
+                    </span>
+                </label>
+            </div>
+
+            <div>
+                <label for="plate">
+                    GB Number plate <br>
+                    <span class="txtSign gb">
+                        <input type="text" class="txtFld" id="plate">
+                    </span>
+                </label>
+            </div>
 
             <p>
-                Do the currency for pounds, euro, dollar and rupee
+                Card number
             </p>
 
             <p>
-                Do the GB numberplate
+                Security number
+            </p>
+
+            <p>
+                Account number
+            </p>
+
+            <p>
+                Sort code
             </p>
            
+        </section>
+
+        <section>
+            <h2>
+                Dropdown
+            </h2>
+   
+            <div>
+                <label for="ddFld">
+                    This is dropdown field <br>
+                    <span class="dd">
+                        <input type="text" class="txtFld" id="ddFld">
+                    </span>
+                </label>
+            </div>
+                       
         </section>
 
         <section>
             <h2>
                 Text area
             </h2>
-    
-            <p>
-                This is text area
-            </p>
-    
-            <textarea name="" id="" cols="30" rows="5" class="txtFld"></textarea>
-           
+
+            <div>
+                <label for="txtArea">
+                    This is text area <br>
+                    <textarea id="txtArea" cols="30" rows="5" class="txtFld"></textarea>
+                </label>
+            </div>
+            
         </section>
 
         <section>
             <h2>
                 Checkbox
             </h2>
+
+            <fieldset>
+                <legend>
+                    This is Checkbox
+                </legend>
+
+                
+                <input type="checkbox" name="checkbox" id="checkbox">
+                <label for="checkbox"><span></span>Checkbox</label>
+
+                <input type="checkbox" name="checkbox" id="checkbox2">
+                <label for="checkbox2"><span></span>Checkbox 2</label>
+
+            </fieldset>
             
-            <p>
-                This is Checkbox
-            </p>
 
-            <input type="checkbox" name="checkbox" id="checkbox">
-            <label for="checkbox"><span></span>Checkbox</label>
 
-            <input type="checkbox" name="checkbox" id="checkbox2">
-            <label for="checkbox2"><span></span>Checkbox 2</label>
                
         </section>
 
@@ -98,34 +176,40 @@
             <h2>
                 Radio button
             </h2>
+
+            <fieldset>
+                <legend>
+                    This is radio button
+                </legend>
+
+                <input type="radio" name="radio" id="radio">
+                <label for="radio"><span></span>Radio 1</label>
+
+                <input type="radio" name="radio" id="radio2">
+                <label for="radio2"><span></span>Radio 2</label>
+                    
+            </fieldset>
             
-            <p>
-                This is radio button
-            </p>
 
-            <input type="radio" name="radio" id="radio">
-            <label for="radio"><span></span>Radio 1</label>
-
-            <input type="radio" name="radio" id="radio2">
-            <label for="radio2"><span></span>Radio 2</label>
-               
         </section>
 
         <section>
             <h2>
                 Option button
             </h2>
-            
-            <p>
-                This is option buttons
-            </p>
 
-            <input type="radio" name="option" id="option1" class="option">
-            <label for="option1"><span></span>Monthly</label>
+            <fieldset>
+                <legend>
+                    This is option buttons
+                </legend>
 
-            <input type="radio" name="option" id="option2" class="option">
-            <label for="option2"><span></span>Annual</label>
-               
+                <input type="radio" name="option" id="option1" class="option">
+                <label for="option1"><span></span>Monthly</label>
+
+                <input type="radio" name="option" id="option2" class="option">
+                <label for="option2"><span></span>Annual</label>
+                    
+            </fieldset>
         </section>
 
         <section>
@@ -134,10 +218,10 @@
             </h2>
             
             <p>
-                This is link
-            </p>
-
-               
+                <a href="" class="txtLnk">
+                    This is a link
+                </a>
+            </p>               
         </section>
         
     </main>

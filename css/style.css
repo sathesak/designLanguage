@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 	Site Name: AK design language
 	Author: Satheswaran Arumaichandran
@@ -60,7 +61,7 @@ input[type="radio"] + label span, input[type="radio"].option + label {
 }
 
 .focus, .btn:focus, .txtFld:focus, input[type="checkbox"]:focus + label span,
-input[type="radio"]:focus + label span, input[type="radio"].option:focus + label {
+input[type="radio"]:focus + label span, input[type="radio"].option:focus + label, .txtLnk:focus {
   box-shadow: 0 0 0 3px #00AFDB;
 }
 
@@ -94,6 +95,71 @@ input[type="radio"]:checked + label span {
 
 .txtFld {
   border: 2px solid #0B0B0B;
+}
+
+.txtSign,
+.dd {
+  position: relative;
+  display: inline-block;
+}
+
+.txtSign:before, .txtSign:after,
+.dd:before,
+.dd:after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+}
+
+.txtSign .txtFld {
+  padding: 10px 10px 10px 60px;
+}
+
+.txtSign:before {
+  min-width: 30px;
+  height: 100%;
+  text-align: center;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background: #0B0B0B;
+  color: #FFFFFF;
+  padding: 0 10px;
+  line-height: 3rem;
+}
+
+.txtSign.pnd:before {
+  content: '£';
+}
+
+.txtSign.eur:before {
+  content: '€';
+}
+
+.txtSign.rps:before {
+  content: '₹';
+  font-family: none;
+}
+
+.txtSign.pnd:before {
+  content: '£';
+}
+
+.txtSign.dlr:before {
+  content: '$';
+}
+
+.txtSign.gb:before {
+  content: 'GB';
+}
+
+.dd:after {
+  top: 50%;
+  right: 20px;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #0B0B0B;
+  border-bottom: 2px solid #0B0B0B;
+  transform: rotate(45deg) translateY(calc(-50% - 6px));
 }
 
 input[type="checkbox"],
@@ -180,4 +246,13 @@ input[type="radio"].option:checked + label {
 
 input[type="radio"].option:checked + label span {
   border-color: #FFFFFF;
+}
+
+.txtLnk {
+  color: #0B0B0B;
+  border-bottom: 1px solid #0B0B0B;
+}
+
+.txtLnk:hover {
+  border-bottom: 2px solid #0B0B0B;
 }
