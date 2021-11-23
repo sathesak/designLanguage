@@ -3,6 +3,10 @@
 	Site Name: AK design language
 	Author: Satheswaran Arumaichandran
 */
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -255,4 +259,17 @@ input[type="radio"].option:checked + label span {
 
 .txtLnk:hover {
   border-bottom: 2px solid #0B0B0B;
+}
+
+.toTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #0B0B0B;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 10px;
 }
