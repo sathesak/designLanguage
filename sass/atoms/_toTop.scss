@@ -2,11 +2,31 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: $black;
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    color: $white;
-    text-align: center;
-    padding: 10px;
+
+    &:hover{
+        @extend .hover;
+
+        &:after{
+            border-color: $black;
+        }
+    }
+
+    &:focus{
+        @extend .focus;
+    }
+
+    &:after{
+        content: '';
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        border-right: 2px solid $white;
+        border-bottom: 2px solid $white;
+        top: 50%;
+        left: 50%;
+        transform: rotate(225deg) translate(5px,-1px);
+    }
 }

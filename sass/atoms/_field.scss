@@ -83,12 +83,12 @@
 
 .dd{
     &:after{
-        top: 50%;
-        right: 20px;
-        width: 10px;
-        height: 10px;
+        width: 7px;
+        height: 7px;
         border-right: 2px solid $black;
         border-bottom: 2px solid $black;
-        transform: rotate(45deg) translateY(calc(-50% - 6px));
+        top: 50%;
+        right: 20px;
+        transform: rotate(45deg) translateY(calc(-50% - 5px));
     }
 }
