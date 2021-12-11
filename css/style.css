@@ -14,12 +14,19 @@ html {
   text-decoration: none;
   border: none;
   box-sizing: border-box;
+  width: 100%;
+  float: left;
+}
+
+ul li {
+  list-style-type: none;
+  position: relative;
 }
 
 @font-face {
   font-family: 'Poppins';
-  src: url("Poppins-Bold.eot");
-  src: url("Poppins-Bold.eot?#iefix") format("embedded-opentype"), url("Poppins-Bold.woff2") format("woff2"), url("Poppins-Bold.woff") format("woff"), url("Poppins-Bold.ttf") format("truetype"), url("Poppins-Bold.svg#Poppins-Bold") format("svg");
+  src: url("fonts/Poppins-Bold.eot");
+  src: url("fonts/Poppins-Bold.eot?#iefix") format("embedded-opentype"), url("fonts/Poppins-Bold.woff2") format("woff2"), url("fonts/Poppins-Bold.woff") format("woff"), url("fonts/Poppins-Bold.ttf") format("truetype"), url("fonts/Poppins-Bold.svg#Poppins-Bold") format("svg");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -27,8 +34,8 @@ html {
 
 @font-face {
   font-family: 'Poppins';
-  src: url("Poppins-Regular.eot");
-  src: url("Poppins-Regular.eot?#iefix") format("embedded-opentype"), url("Poppins-Regular.woff2") format("woff2"), url("Poppins-Regular.woff") format("woff"), url("Poppins-Regular.ttf") format("truetype"), url("Poppins-Regular.svg#Poppins-Regular") format("svg");
+  src: url("fonts/Poppins-Regular.eot");
+  src: url("fonts/Poppins-Regular.eot?#iefix") format("embedded-opentype"), url("fonts/Poppins-Regular.woff2") format("woff2"), url("fonts/Poppins-Regular.woff") format("woff"), url("fonts/Poppins-Regular.ttf") format("truetype"), url("fonts/Poppins-Regular.svg#Poppins-Regular") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -36,8 +43,8 @@ html {
 
 @font-face {
   font-family: 'Poppins';
-  src: url("Poppins-Medium.eot");
-  src: url("Poppins-Medium.eot?#iefix") format("embedded-opentype"), url("Poppins-Medium.woff2") format("woff2"), url("Poppins-Medium.woff") format("woff"), url("Poppins-Medium.ttf") format("truetype"), url("Poppins-Medium.svg#Poppins-Medium") format("svg");
+  src: url("fonts/Poppins-Medium.eot");
+  src: url("fonts/Poppins-Medium.eot?#iefix") format("embedded-opentype"), url("fonts/Poppins-Medium.woff2") format("woff2"), url("fonts/Poppins-Medium.woff") format("woff"), url("fonts/Poppins-Medium.ttf") format("truetype"), url("fonts/Poppins-Medium.svg#Poppins-Medium") format("svg");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -51,7 +58,7 @@ body {
 }
 
 section {
-  padding: 40px 0;
+  padding: 40px 20px;
 }
 
 .brdRnd, .btn, .txtFld, input[type="checkbox"] + label span,
@@ -65,7 +72,8 @@ input[type="radio"] + label span, input[type="radio"].option + label {
 }
 
 .focus, .btn:focus, .txtFld:focus, input[type="checkbox"]:focus + label span,
-input[type="radio"]:focus + label span, input[type="radio"].option:focus + label, .txtLnk:focus, .toTop:focus {
+input[type="radio"]:focus + label span, input[type="radio"].option:focus + label, a:focus,
+.txtLnk:focus, .toTop:focus {
   box-shadow: 0 0 0 3px #00AFDB;
 }
 
@@ -84,6 +92,7 @@ input[type="radio"]:checked + label span {
   background: #0B0B0B;
   color: #FFFFFF;
   border: 2px solid #0B0B0B;
+  width: auto;
 }
 
 .btn.outline {
@@ -102,17 +111,43 @@ input[type="radio"]:checked + label span {
 }
 
 .txtSign,
-.dd {
+.ddList {
   position: relative;
   display: inline-block;
 }
 
 .txtSign:before, .txtSign:after,
-.dd:before,
-.dd:after {
+.ddList:before,
+.ddList:after {
   content: '';
   position: absolute;
   z-index: 1;
+}
+
+.ddList ul {
+  position: absolute;
+  z-index: 1;
+  border-radius: 5px;
+  background: #FFFFFF;
+  box-shadow: 0 0 5px #0B0B0B;
+}
+
+.ddList ul input[type="radio"] + label {
+  padding: 10px 10px 10px 45px;
+  border-bottom: 1px solid #0B0B0B;
+  color: #0B0B0B;
+}
+
+.ddList ul input[type="radio"] + label span {
+  left: 10px;
+}
+
+.ddList ul li {
+  list-style: none;
+}
+
+.ddList ul li:last-child label {
+  border: none;
 }
 
 .txtSign .txtFld {
@@ -156,14 +191,14 @@ input[type="radio"]:checked + label span {
   content: 'GB';
 }
 
-.dd:after {
+.ddList:after {
   width: 7px;
   height: 7px;
   border-right: 2px solid #0B0B0B;
   border-bottom: 2px solid #0B0B0B;
-  top: 50%;
+  top: -30px;
   right: 20px;
-  transform: rotate(45deg) translateY(calc(-50% - 5px));
+  transform: rotate(45deg);
 }
 
 input[type="checkbox"],
@@ -171,6 +206,14 @@ input[type="radio"] {
   border: 0;
   width: 0;
   height: 0;
+  position: absolute;
+}
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+  padding: 10px 10px 10px 35px;
+  position: relative;
+  line-height: 1.2em;
 }
 
 input[type="checkbox"] + label:hover,
@@ -178,18 +221,15 @@ input[type="radio"] + label:hover {
   cursor: pointer;
 }
 
-input[type="checkbox"] + label:hover span,
-input[type="radio"] + label:hover span {
-  margin: -1px 10px -6px -4px;
-}
-
 input[type="checkbox"] + label span,
 input[type="radio"] + label span {
   border: 2px solid #0B0B0B;
   width: 25px;
   height: 25px;
-  margin: 0 10px -6px -3px;
-  display: inline-block;
+  display: block;
+  position: absolute;
+  top: 8px;
+  left: 0;
 }
 
 input[type="checkbox"] + label span:before,
@@ -203,10 +243,6 @@ input[type="radio"] + label span:before {
   top: 5px;
   left: 5px;
   transform: rotate(-45deg);
-}
-
-input[type="radio"] + label {
-  padding-right: 10px;
 }
 
 input[type="radio"] + label span {
@@ -227,16 +263,19 @@ input[type="radio"] + label span:before {
 
 input[type="radio"].option + label {
   border: 2px solid #0B0B0B;
-  padding: 10px 10 10px 50px;
+  padding: 10px 10px 10px 45px;
+}
+
+input[type="radio"].option + label span {
+  left: 10px;
 }
 
 input[type="radio"].option:hover + label {
   border-color: #0B0B0B;
-  padding: 10px 10px 10px 11px;
 }
 
 input[type="radio"].option:hover + label span {
-  border: 2px solid #0B0B0B;
+  box-shadow: 0 0 0 2px #0B0B0B;
 }
 
 input[type="radio"].option:focus + label span {
@@ -252,11 +291,15 @@ input[type="radio"].option:checked + label span {
   border-color: #FFFFFF;
 }
 
+a,
 .txtLnk {
   color: #0B0B0B;
   border-bottom: 1px solid #0B0B0B;
+  float: none;
+  width: auto;
 }
 
+a:hover,
 .txtLnk:hover {
   border-bottom: 2px solid #0B0B0B;
 }

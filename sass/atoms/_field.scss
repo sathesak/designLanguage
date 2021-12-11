@@ -12,7 +12,7 @@
 }
 
 .txtSign,
-.dd{
+.ddList{
     position: relative;
     display: inline-block;
 
@@ -21,6 +21,41 @@
         content: '';
         position: absolute;
         z-index: 1;
+    }
+}
+
+.ddList{
+    ul{
+        position: absolute;
+        z-index: 1;
+        border-radius: 5px;
+        background: $white;
+        box-shadow: 0 0 5px $black;
+
+        input[type="radio"]{
+
+            &+label{
+                padding: 10px 10px 10px 45px;
+                border-bottom: 1px solid $black;
+                color: $black;
+
+                span{
+                    left: 10px;
+                }
+            }
+
+        }
+
+        li{
+            list-style: none;
+
+            &:last-child{
+                label{
+                    border: none;
+                }
+                
+            }
+        }
     }
 }
 
@@ -81,14 +116,14 @@
 
 }
 
-.dd{
+.ddList{
     &:after{
         width: 7px;
         height: 7px;
         border-right: 2px solid $black;
         border-bottom: 2px solid $black;
-        top: 50%;
+        top: -30px;
         right: 20px;
-        transform: rotate(45deg) translateY(calc(-50% - 5px));
+        transform: rotate(45deg);
     }
 }

@@ -3,6 +3,7 @@ input[type="radio"]{
     border: 0;
     width:0;
     height: 0;
+    position: absolute;
 
     &:focus{
         & + label{
@@ -27,16 +28,21 @@ input[type="radio"]{
     
             span{
                 @extend .hover;
-                margin: -1px 10px -6px -4px;
             }
         }
+        
+        padding: 10px 10px 10px 35px;
+        position: relative;
+        line-height: 1.2em;
 
         span {
             border: 2px solid $black;
             width: 25px;
             height: 25px;
-            margin: 0 10px -6px -3px;
-            display: inline-block;
+            display: block;
+            position: absolute;
+            top: 8px;
+            left: 0;
             @extend .brdRnd;
     
             &:before{
@@ -58,7 +64,6 @@ input[type="radio"]{
 input[type="radio"]{
 
     & + label{
-        padding-right: 10px;
         
         span{
             border-radius: 50%;
@@ -81,19 +86,20 @@ input[type="radio"]{
 
         & + label{
             border: 2px solid $black;
-            padding: 10px 10 10px 50px;
+            padding: 10px 10px 10px 45px;
             @extend .brdRnd;
 
-            
+            span{
+                left: 10px;
+            }
         }
 
         &:hover{
             & + label{
                 @extend .hover;
                 border-color: $black;
-                padding: 10px 10px 10px 11px;
                 span{
-                    border: 2px solid $black;
+                    box-shadow: 0 0 0 2px $black;
                 }
             }
         }
