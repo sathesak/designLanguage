@@ -123,25 +123,29 @@
                 Dropdown
             </h2>
    
-            <div>
+            <div data-ele="dropdown">
                 <label for="ddFld">
                     This is dropdown field <br>
-                    <div class="dd">
-                        <input type="text" class="txtFld" id="ddFld" class="ddFldInput">
-                        <ul>
-                            <li>
-                                <input type="radio" name="ddList" id="item1">
-                                <label for="item1"><span></span>This is 1</label>    
-                            </li>
-
-                            <li>
-                                <input type="radio" name="ddList" id="item2">
-                                <label for="item2"><span></span>This is 2 this is more and more text goes here</label>    
-                            </li>
-                                
-                        </ul>
-                    </div>
+                    <input type="text" class="txtFld ddFldInput" id="ddFld" data-dd="field">
                 </label>
+
+                <div class="ddList">
+                    
+                    <ul>
+                        <li>
+                            <input type="radio" name="ddList" id="item1" data-dd="item">
+                            <label for="item1"><span></span>This is 1</label>    
+                        </li>
+
+                        <li>
+                            <input type="radio" name="ddList" id="item2" data-dd="item">
+                            <label for="item2"><span></span>This is 2 this is more and more text goes here</label>    
+                        </li>
+                            
+                    </ul>
+
+                </div>
+               
             </div>
                        
         </section>
@@ -277,12 +281,15 @@
 
             /* List item added to the dropdown */
      
-            var dd = document.querySelectorAll('.dd');
-            dd.forEach( (e) => {
-                const ddField = e.querySelector('input[type="text"]');
-                console.log(ddField);
+            var ddEle = document.querySelectorAll('[data-ele="dropdown"]');
+
+            ddEle.forEach((e)=>{
+                const ddFld = e.querySelector('[data-dd="field"]');
+                const ddItm = e.querySelectorAll('[data-dd="item"]')
+                console.log(ddItm);
 
             });
+
         
 
         });

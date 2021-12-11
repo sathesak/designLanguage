@@ -1,6 +1,9 @@
+a,
 .txtLnk{
     color: $black;
     border-bottom: 1px solid $black;
+    float: none;
+    width: auto;
 
     &:hover{
         border-bottom: 2px solid $black;
