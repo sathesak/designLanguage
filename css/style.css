@@ -14,7 +14,12 @@ html {
   text-decoration: none;
   border: none;
   box-sizing: border-box;
-  list-style: none;
+}
+
+ul li {
+  float: left;
+  list-style-type: none;
+  position: relative;
 }
 
 @font-face {
@@ -199,6 +204,14 @@ input[type="radio"] {
   border: 0;
   width: 0;
   height: 0;
+  position: absolute;
+}
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+  padding: 10px 10px 10px 35px;
+  position: relative;
+  float: left;
 }
 
 input[type="checkbox"] + label:hover,
@@ -206,18 +219,15 @@ input[type="radio"] + label:hover {
   cursor: pointer;
 }
 
-input[type="checkbox"] + label:hover span,
-input[type="radio"] + label:hover span {
-  margin: -1px 10px -6px -4px;
-}
-
 input[type="checkbox"] + label span,
 input[type="radio"] + label span {
   border: 2px solid #0B0B0B;
   width: 25px;
   height: 25px;
-  margin: 0 10px -6px -3px;
-  display: inline-block;
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 0;
 }
 
 input[type="checkbox"] + label span:before,
@@ -260,7 +270,6 @@ input[type="radio"].option + label {
 
 input[type="radio"].option:hover + label {
   border-color: #0B0B0B;
-  padding: 10px 10px 10px 11px;
 }
 
 input[type="radio"].option:hover + label span {

@@ -3,6 +3,7 @@ input[type="radio"]{
     border: 0;
     width:0;
     height: 0;
+    position: absolute;
 
     &:focus{
         & + label{
@@ -27,16 +28,21 @@ input[type="radio"]{
     
             span{
                 @extend .hover;
-                margin: -1px 10px -6px -4px;
             }
         }
+
+        padding: 10px 10px 10px 35px;
+        position: relative;
+        float: left;
 
         span {
             border: 2px solid $black;
             width: 25px;
             height: 25px;
-            margin: 0 10px -6px -3px;
-            display: inline-block;
+            display: block;
+            position: absolute;
+            top: 10px;
+            left: 0;
             @extend .brdRnd;
     
             &:before{
@@ -91,7 +97,7 @@ input[type="radio"]{
             & + label{
                 @extend .hover;
                 border-color: $black;
-                padding: 10px 10px 10px 11px;
+                //padding: 10px 10px 10px 11px;
                 span{
                     border: 2px solid $black;
                 }
