@@ -24,6 +24,38 @@
     }
 }
 
+.dd{
+    ul{
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        border-radius: 5px;
+        background: $white;
+        box-shadow: 0 0 5px $black;
+
+        label{
+            width: 100%;
+            float: left;
+            padding: 10px;
+            border-bottom: 1px solid $black;
+            color: $black;
+        }
+
+        li{
+            list-style: none;
+            float: left;
+            width: 100%;
+
+            &:last-child{
+                label{
+                    border: none;
+                }
+                
+            }
+        }
+    }
+}
+
 .txtSign{
 
     .txtFld{

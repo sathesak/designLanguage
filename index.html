@@ -126,9 +126,21 @@
             <div>
                 <label for="ddFld">
                     This is dropdown field <br>
-                    <span class="dd">
-                        <input type="text" class="txtFld" id="ddFld">
-                    </span>
+                    <div class="dd">
+                        <input type="text" class="txtFld" id="ddFld" class="ddFldInput">
+                        <ul>
+                            <li>
+                                <input type="radio" name="ddList" id="item1">
+                                <label for="item1"><span></span>This is 1</label>    
+                            </li>
+
+                            <li>
+                                <input type="radio" name="ddList" id="item2">
+                                <label for="item2"><span></span>This is 2 this is more and more text goes here</label>    
+                            </li>
+                                
+                        </ul>
+                    </div>
                 </label>
             </div>
                        
@@ -158,18 +170,20 @@
                     This is Checkbox
                 </legend>
 
-                
-                <input type="checkbox" name="checkbox" id="checkbox">
-                <label for="checkbox"><span></span>Checkbox</label>
+                <ul>
+                    <li>
+                        <input type="checkbox" name="checkbox" id="checkbox">
+                        <label for="checkbox"><span></span>Checkbox</label>
+                    </li>
 
-                <input type="checkbox" name="checkbox" id="checkbox2">
-                <label for="checkbox2"><span></span>Checkbox 2</label>
+                    <li>
+                        <input type="checkbox" name="checkbox" id="checkbox2">
+                        <label for="checkbox2"><span></span>Checkbox 2 this is more and more text goes here</label>        
+                    </li>
+                </ul>
 
             </fieldset>
-            
 
-
-               
         </section>
 
         <section>
@@ -182,12 +196,18 @@
                     This is radio button
                 </legend>
 
-                <input type="radio" name="radio" id="radio">
-                <label for="radio"><span></span>Radio 1</label>
+                <ul>
+                    <li>
+                        <input type="radio" name="radio" id="radio">
+                        <label for="radio"><span></span>Radio 1</label>
+                    </li>
 
-                <input type="radio" name="radio" id="radio2">
-                <label for="radio2"><span></span>Radio 2</label>
-                    
+                    <li>
+                        <input type="radio" name="radio" id="radio2">
+                        <label for="radio2"><span></span>Radio 2 this is more and more text goes here</label>
+                    </li>
+                </ul>
+
             </fieldset>
             
 
@@ -203,12 +223,17 @@
                     This is option buttons
                 </legend>
 
-                <input type="radio" name="option" id="option1" class="option">
-                <label for="option1"><span></span>Monthly</label>
+                <ul>
+                    <li>
+                        <input type="radio" name="option" id="option1" class="option">
+                        <label for="option1"><span></span>Monthly</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="option" id="option2" class="option">
+                        <label for="option2"><span></span>Annual this is more and more text goes here</label>
+                    </li>
+                </ul>
 
-                <input type="radio" name="option" id="option2" class="option">
-                <label for="option2"><span></span>Annual</label>
-                    
             </fieldset>
         </section>
 
@@ -224,6 +249,11 @@
             </p>               
         </section>
 
+        <section id="jsTest">
+            JS test executed?
+
+        </section>
+
         <!-- Back to top button -->
         <a href="#" title="Back to top" class="btn toTop">
         </a>
@@ -233,6 +263,30 @@
     <footer>
 
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            /* Create new element and append child */
+            
+            var container = document.querySelector('#jsTest');
+            var newEl = document.createElement('div');
+            newEl.innerHTML = "This is a new HTML";
+
+            container.appendChild(newEl);
+
+            /* List item added to the dropdown */
+     
+            var dd = document.querySelectorAll('.dd');
+            dd.forEach( (e) => {
+                const ddField = e.querySelector('input[type="text"]');
+                console.log(ddField);
+
+            });
+        
+
+        });
+    </script>
 
 </body>
 </html>
