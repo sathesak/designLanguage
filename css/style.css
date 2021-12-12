@@ -23,6 +23,14 @@ ul li {
   position: relative;
 }
 
+.dispNone {
+  display: none;
+}
+
+.dispBlock {
+  display: block;
+}
+
 @font-face {
   font-family: 'Poppins';
   src: url("fonts/Poppins-Bold.eot");
@@ -108,6 +116,11 @@ input[type="radio"]:checked + label span {
 
 .txtFld {
   border: 2px solid #0B0B0B;
+}
+
+.txtFld.txtDDFld {
+  text-overflow: ellipsis;
+  padding: 10px 40px 10px 10px;
 }
 
 .txtSign,
