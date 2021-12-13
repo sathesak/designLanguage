@@ -2,6 +2,11 @@
     border: 2px solid $black;
     @extend .brdRnd;
 
+    &.txtDDFld{
+        text-overflow: ellipsis;
+        padding: 10px 40px 10px 10px;
+    }
+
     &:hover{
         @extend .hover;
     }
@@ -117,6 +122,8 @@
 }
 
 .ddList{
+
+
     &:after{
         width: 7px;
         height: 7px;
