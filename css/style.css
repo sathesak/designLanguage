@@ -79,6 +79,15 @@ input[type="radio"] + label span, input[type="radio"].option + label {
   position: relative;
 }
 
+.icn {
+  position: relative;
+}
+
+.icn.chevronUp:after {
+  content: '';
+  background: url("assets/iconLibrary_chevronUp.svg");
+}
+
 .focus, .btn:focus, .txtFld:focus, input[type="checkbox"]:focus + label span,
 input[type="radio"]:focus + label span, input[type="radio"].option:focus + label, a:focus,
 .txtLnk:focus, .toTop:focus {
@@ -135,6 +144,10 @@ input[type="radio"]:checked + label span {
   content: '';
   position: absolute;
   z-index: 1;
+}
+
+.ddList.dropUp ul {
+  bottom: 50px;
 }
 
 .ddList ul {
@@ -326,18 +339,18 @@ a:hover,
   border-radius: 50%;
 }
 
-.toTop:hover:after {
-  border-color: #0B0B0B;
-}
-
-.toTop:after {
-  content: '';
+.toTop svg {
   position: absolute;
-  width: 7px;
-  height: 7px;
-  border-right: 2px solid #FFFFFF;
-  border-bottom: 2px solid #FFFFFF;
   top: 50%;
   left: 50%;
-  transform: rotate(225deg) translate(5px, -1px);
+  transform: translate(-50%, -50%);
+  width: 25px;
+}
+
+.toTop .icon {
+  fill: #FFFFFF;
+}
+
+.toTop:hover .icon {
+  fill: #0B0B0B;
 }

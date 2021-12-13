@@ -30,6 +30,13 @@
 }
 
 .ddList{
+
+    &.dropUp{
+        ul{
+            bottom: 50px;
+        }
+    }
+
     ul{
         position: absolute;
         z-index: 1;
