@@ -1,0 +1,11 @@
+.icn{
+    position: relative;
+
+    &.chevronUp{
+        &:after{
+            content:'';
+            background: url('assets/iconLibrary_chevronUp.svg');
+        }
+    }
+
+}
