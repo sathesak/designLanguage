@@ -1,0 +1,92 @@
+.acc{
+    li{
+        border-bottom: 1px solid $black;
+
+        &:last-child{
+            border: none;
+        }
+    }
+
+    &.rndStyle{
+        li{
+            border: 1px solid $black;
+            border-radius: 3px;
+            margin: 5px 0;
+           
+        }
+
+        .accBtn{
+            padding: 10px;
+
+            span{
+                right: 10px;
+            }
+        }
+
+        .accPnl{
+            padding: 5px 10px 20px;
+        }
+    }
+}
+
+.accBtn{
+    float: left;
+    width: 100%;    
+    padding: 10px 0;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    position: relative;
+
+    span{
+        position: absolute;
+        width:20px;
+        height: 12px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+
+        &:before,
+        &:after{
+            content:'';
+            position: absolute;
+            width:2px;
+            height: 13px;
+            background: $black;
+            bottom: 0;
+            transition: 0.2s ease;
+        }
+        &:before{
+            left: 5px;
+            transform: rotate(-40deg);
+        }
+        &:after{
+            right: 5px;
+            transform: rotate(40deg);
+        }
+
+    }
+
+    &.active{
+        span{
+            &:before{
+                transform: rotate(-140deg);
+            }
+            &:after{
+                transform: rotate(140deg);
+            }
+        }
+    }
+
+    &:hover{
+        border: none;
+    }
+
+}
+
+.accPnl{
+    padding: 5px 0 20px;
+    transition: none;
+    display: none;
+}
