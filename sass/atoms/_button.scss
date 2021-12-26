@@ -5,19 +5,24 @@
     width: auto;
     @extend .brdRnd;
 
-    &.outline{
-        background: none;
-        color: $black;
-    }
-
-    &:hover{
+    .btnHover{
         background: $white;
         color: $black;
         cursor: pointer;
         @extend .hover;
     }
 
+    &.outline{
+        background: none;
+        color: $black;
+    }
+
+    &:hover{
+        @extend .btnHover;
+    }
+
     &:focus{
+        @extend .btnHover;
         @extend .focus;
     }
   
