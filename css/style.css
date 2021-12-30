@@ -125,7 +125,7 @@ input[type="radio"]:checked + label span {
 }
 
 .acc.rndStyle li a:focus {
-  box-shadow: 0 0 0 2px #0B0B0B, 0 0 0 3px #FFFFFF, 0 0 0 6px #00AFDB;
+  box-shadow: 0 0 0 1px #FFFFFF, 0 0 0 4px #00AFDB;
 }
 
 .acc.rndStyle .accBtn {
@@ -450,6 +450,7 @@ a:hover,
   background: #FFFFFF;
   border: 1px solid #0B0B0B;
   border-radius: 10px;
+  overflow-y: auto;
 }
 
 .modalbox > * {
@@ -462,6 +463,8 @@ a:hover,
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   font-weight: bold;
+  position: sticky;
+  top: 0;
 }
 
 .modalbox .title .close {
