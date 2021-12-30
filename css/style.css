@@ -7,6 +7,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  overflow-y: scroll;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -16,7 +20,7 @@ html {
   box-sizing: border-box;
   width: 100%;
   float: left;
-  transition: 0.2s ease;
+  transition: 0.05s ease;
 }
 
 ul li {
@@ -95,7 +99,7 @@ input[type="radio"]:focus + label span, input[type="radio"].option:focus + label
   box-shadow: 0 0 0 1px #FFFFFF, 0 0 0 4px #00AFDB;
 }
 
-.hover, .btn .btnHover, .btn .btn:hover, .btn .btn:focus, .txtFld:hover, .txtFld:focus, input[type="checkbox"] + label:hover span,
+.hover, .btn:hover, .btn:focus, .txtFld:hover, .txtFld:focus, input[type="checkbox"] + label:hover span,
 input[type="radio"] + label:hover span, input[type="radio"].option:hover + label, .toTop:hover {
   border: 3px solid;
   margin: -1px;
@@ -115,9 +119,13 @@ input[type="radio"]:checked + label span {
 }
 
 .acc.rndStyle li {
-  border: 1px solid #0B0B0B;
-  border-radius: 3px;
+  border: 2px solid #0B0B0B;
+  border-radius: 5px;
   margin: 5px 0;
+}
+
+.acc.rndStyle li a:focus {
+  box-shadow: 0 0 0 2px #0B0B0B, 0 0 0 3px #FFFFFF, 0 0 0 6px #00AFDB;
 }
 
 .acc.rndStyle .accBtn {
@@ -195,16 +203,21 @@ input[type="radio"]:checked + label span {
   color: #FFFFFF;
   border: 2px solid #0B0B0B;
   width: auto;
-}
-
-.btn .btnHover, .btn .btn:hover, .btn .btn:focus {
-  background: #FFFFFF;
-  color: #0B0B0B;
   cursor: pointer;
 }
 
 .btn.outline {
   background: none;
+  color: #0B0B0B;
+}
+
+.btn:hover {
+  background: #FFFFFF;
+  color: #0B0B0B;
+}
+
+.btn:focus {
+  background: #FFFFFF;
   color: #0B0B0B;
 }
 
@@ -415,6 +428,49 @@ a:hover,
   border-bottom: 2px solid #0B0B0B;
 }
 
+.overlay {
+  transition: none;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 9;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.modalbox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 600px;
+  max-height: calc(100vh - 60px);
+  background: #FFFFFF;
+  border: 1px solid #0B0B0B;
+  border-radius: 10px;
+}
+
+.modalbox > * {
+  padding: 20px;
+}
+
+.modalbox .title {
+  width: 100%;
+  background: #FFFFFF;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-weight: bold;
+}
+
+.modalbox .title .close {
+  position: absolute;
+  font-weight: normal;
+  float: none;
+  right: 20px;
+}
+
 .toTop {
   position: fixed;
   bottom: 20px;
@@ -422,6 +478,7 @@ a:hover,
   width: 45px;
   height: 45px;
   border-radius: 50%;
+  z-index: 9;
 }
 
 .toTop svg {
@@ -436,6 +493,15 @@ a:hover,
   fill: #FFFFFF;
 }
 
+.toTop:hover {
+  background: #FFFFFF;
+  border: 2px solid #0B0B0B;
+}
+
 .toTop:hover .icon {
+  fill: #0B0B0B;
+}
+
+.toTop:focus .icon {
   fill: #0B0B0B;
 }

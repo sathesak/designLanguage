@@ -5,6 +5,7 @@
     width: 45px;
     height: 45px;
     border-radius: 50%;
+    z-index: 9;
 
     svg{
         position: absolute;
@@ -21,6 +22,9 @@
     &:hover{
         @extend .hover;
 
+        background: $white;
+        border: 2px solid $black;
+
         .icon{
             fill: $black;
         }
@@ -29,6 +33,10 @@
 
     &:focus{
         @extend .focus;
+
+        .icon{
+            fill: $black;
+        }
     }
 
 }

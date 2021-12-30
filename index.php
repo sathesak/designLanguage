@@ -21,13 +21,16 @@
 
         <?php include 'mod/_accordion.php';?>
         <?php include 'mod/_button.php';?>
+        <?php include 'mod/_modalbox.php';?>
         <?php include 'mod/_textinput.php';?>
         <?php include 'mod/_textarea.php';?>
         <?php include 'mod/_dropdown.php';?>
+     
         <?php include 'mod/_checkbox.php';?>
         <?php include 'mod/_radiobutton.php';?>
         <?php include 'mod/_option.php';?>
         <?php include 'mod/_link.php';?>
+
 
         <?php include 'mod/_backtotop.php';?>
 
