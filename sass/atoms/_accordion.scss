@@ -9,10 +9,15 @@
 
     &.rndStyle{
         li{
-            border: 1px solid $black;
-            border-radius: 3px;
+            border: 2px solid $black;
+            border-radius: 5px;
             margin: 5px 0;
-           
+
+            a{
+                &:focus{
+                    box-shadow: 0 0 0 2px $black, 0 0 0 3px $white, 0 0 0 6px $focus;
+                }
+            }
         }
 
         .accBtn{
@@ -26,6 +31,7 @@
         .accPnl{
             padding: 5px 10px 20px;
         }
+
     }
 }
 

@@ -1,0 +1,54 @@
+.overlay{
+    transition: none;
+
+    display: none;
+
+
+    position: fixed;
+    top:0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    
+    z-index: 9;
+
+    background: rgba(0,0,0,0.9);
+
+}
+
+.modalbox{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    max-width: 600px;
+    max-height: calc(100vh - 60px);
+
+    background: $white;
+    border: 1px solid $black;
+
+    border-radius: 10px;
+
+    & > *{
+        padding: 20px;
+    }
+
+    .title{
+        width: 100%;
+        background: $white;
+
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        font-weight: bold;
+
+        .close{
+            position: absolute;
+            font-weight: normal;
+            float: none;
+            right: 20px;
+        }
+
+
+    }
+}

@@ -3,14 +3,8 @@
     color: $white;
     border: 2px solid $black;
     width: auto;
+    cursor: pointer;
     @extend .brdRnd;
-
-    .btnHover{
-        background: $white;
-        color: $black;
-        cursor: pointer;
-        @extend .hover;
-    }
 
     &.outline{
         background: none;
@@ -18,11 +12,15 @@
     }
 
     &:hover{
-        @extend .btnHover;
+        background: $white;
+        color: $black;
+        @extend .hover;
     }
 
     &:focus{
-        @extend .btnHover;
+        background: $white;
+        color: $black;
+        @extend .hover;
         @extend .focus;
     }
   

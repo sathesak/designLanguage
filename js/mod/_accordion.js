@@ -3,6 +3,7 @@ define(['accordion','jquery'], function(){
     var accordion = {};
 
     accordion = function(){
+        
         var accBtn = $('[data-acc="button"]');
 
         $(accBtn).each(function() {

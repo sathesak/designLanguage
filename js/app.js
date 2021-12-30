@@ -9,7 +9,8 @@ requirejs.config({
         ],
 
         //modules
-        accordion: 'mod/_accordion.min'
+        accordion: 'mod/_accordion.min',
+        modal: 'mod/_modal.min'
 
     },
    
@@ -18,8 +19,13 @@ requirejs.config({
 require(['jquery'],function(){
 
     $(document).ready(function(){
-        if(document.typ)
-        require(['accordion']);
+        if(typeof modules.accordion !== 'undefined' & modules.accordion === true){
+            require(['accordion']);
+        }
+
+        if(typeof modules.modal !== 'undefined' & modules.modal === true){
+            require(['modal']);
+        }
     });
     
 });
