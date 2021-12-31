@@ -110,6 +110,26 @@ input[type="radio"]:checked + label span {
   background: #0B0B0B;
 }
 
+/* Custom scroll bar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
 .acc li {
   border-bottom: 1px solid #0B0B0B;
 }
@@ -428,16 +448,24 @@ a:hover,
   border-bottom: 2px solid #0B0B0B;
 }
 
-.overlay {
-  transition: none;
-  display: none;
+.modalWrap {
   position: fixed;
   top: 0;
   left: 0;
   min-width: 100%;
   min-height: 100%;
-  z-index: 9;
   background: rgba(0, 0, 0, 0.9);
+  transition: none;
+  display: none;
+  z-index: 9;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .modalbox {
@@ -457,21 +485,37 @@ a:hover,
   padding: 20px;
 }
 
-.modalbox .title {
-  width: 100%;
-  background: #FFFFFF;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  font-weight: bold;
+.modalbox:after {
+  content: '';
   position: sticky;
-  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background: #FFFFFF;
+  box-shadow: 0 0 20px 20px #FFFFFF;
+  display: table;
 }
 
-.modalbox .title .close {
+.modalbox .title {
+  font-weight: bold;
+}
+
+.modalbox .closeBar {
   position: absolute;
-  font-weight: normal;
-  float: none;
-  right: 20px;
+  top: 0;
+  transition: none;
+}
+
+.modalbox .closeBar.sticky {
+  position: sticky;
+  width: 100%;
+  background: #FFFFFF;
+  padding: 10px 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.modalbox .close {
+  float: right;
 }
 
 .toTop {

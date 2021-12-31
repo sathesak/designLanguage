@@ -12,16 +12,24 @@
         Open modal box
     </a>
 
-    <div class="overlay" data-modalbox="modal1">
+    <div class="modalWrap" data-modalwrap="modal1">
+        <div class="overlay" data-modaloverlay>
+        </div>
 
-        <div class="modalbox">
+        <div class="modalbox" data-modalbox>
+            
             <div class="title">
                 This is title
+            </div>
 
+            <div class="closeBar" data-modalclosebar>
                 <a href="" class="close" data-modalClose>
                     Close
                 </a>
             </div>
+
+            
+            
             <div class="body">
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
