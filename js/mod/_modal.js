@@ -22,10 +22,12 @@ define(['modal','jquery'], function(){
                 });
 
                 var modalWrap = $('[data-modalwrap="' + $id + '"]');
-                var modalClose = modalWrap.find('[data-modalclose');
-         
+                var modalBox = modalWrap.find('[data-modalbox]');
+
                 modalWrap.fadeIn();
-                modalClose.focus();
+                modalBox.focus();
+
+               
 
             });
             
@@ -76,19 +78,31 @@ define(['modal','jquery'], function(){
 
         //close bar sticky function
 
-        $('[data-modalbox]').scroll(function(){
+        var modalBox = $('[data-modalbox]');
+
+        modalBox.scroll(function(){
 
             var _this = $(this);
 
             var bar = _this.find('[data-modalclosebar]');
-            var barOffset = bar.offset().top;
+            var barHeight = bar.innerHeight();
 
-            if (barOffset < 65){
+            var modalCopy = _this.find('.body');
+            var modalCopyOffset = modalCopy.offset().top + barHeight;
+
+
+            if (modalBox.scrollTop() > modalCopyOffset){
                 bar.addClass('sticky');
+                modalCopy.css({
+                    'margin-top':-barHeight
+                });
             }
 
-            else if (barOffset >= 65){
+            else if (modalBox.scrollTop() < modalCopyOffset){
                 bar.removeClass('sticky');
+                modalCopy.css({
+                    'margin-top':0
+                });
             }
 
         });

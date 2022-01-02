@@ -16,7 +16,7 @@
         <div class="overlay" data-modaloverlay>
         </div>
 
-        <div class="modalbox" data-modalbox>
+        <div class="modalbox" tabindex="-1" data-modalbox>
             
             <div class="title">
                 This is title
