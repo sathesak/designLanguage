@@ -92,17 +92,17 @@ define(['modal','jquery'], function(){
 
 
             if (modalBox.scrollTop() > modalCopyOffset){
-                bar.addClass('sticky');
                 modalCopy.css({
                     'margin-top':-barHeight
                 });
+                bar.addClass('sticky');
             }
 
             else if (modalBox.scrollTop() < modalCopyOffset){
-                bar.removeClass('sticky');
                 modalCopy.css({
                     'margin-top':0
                 });
+                bar.removeClass('sticky');
             }
 
         });

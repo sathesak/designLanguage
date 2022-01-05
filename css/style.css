@@ -97,6 +97,7 @@ input[type="radio"] + label span, input[type="radio"].option + label {
 input[type="radio"]:focus + label span, input[type="radio"].option:focus + label, a:focus,
 .txtLnk:focus, .toTop:focus {
   box-shadow: 0 0 0 1px #FFFFFF, 0 0 0 4px #00AFDB;
+  -webkit-box-shadow: 0 0 0 1px #FFFFFF, 0 0 0 4px #00AFDB;
 }
 
 .hover, .btn:hover, .btn:focus, .txtFld:hover, .txtFld:focus, input[type="checkbox"] + label:hover span,
@@ -146,6 +147,7 @@ input[type="radio"]:checked + label span {
 
 .acc.rndStyle li a:focus {
   box-shadow: 0 0 0 1px #FFFFFF, 0 0 0 4px #00AFDB;
+  -webkit-box-shadow: 0 0 0 1px #FFFFFF, 0 0 0 4px #00AFDB;
 }
 
 .acc.rndStyle .accBtn {
@@ -474,7 +476,7 @@ a:hover,
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 600px;
-  max-height: calc(100vh - 60px);
+  max-height: calc(100% - 60px);
   background: #FFFFFF;
   border: 1px solid #0B0B0B;
   border-radius: 10px;
@@ -487,6 +489,9 @@ a:hover,
 
 .modalbox:after {
   content: '';
+  position: -moz-sticky;
+  position: -o-sticky;
+  position: -ms-sticky;
   position: sticky;
   bottom: 0;
   width: 100%;
@@ -507,6 +512,9 @@ a:hover,
 }
 
 .modalbox .closeBar.sticky {
+  position: -moz-sticky;
+  position: -o-sticky;
+  position: -ms-sticky;
   position: sticky;
   width: 100%;
   background: #FFFFFF;

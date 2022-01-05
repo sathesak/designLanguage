@@ -9,7 +9,7 @@
     </script>
 
     <a href="" data-modalBtn="modal1">
-        Open modal box
+        Open modal box 
     </a>
 
     <div class="modalWrap" data-modalwrap="modal1">
@@ -19,7 +19,7 @@
         <div class="modalbox" tabindex="-1" data-modalbox>
             
             <div class="title">
-                This is title
+                This is title la la
             </div>
 
             <div class="closeBar" data-modalclosebar>
