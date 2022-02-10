@@ -70,7 +70,7 @@ define(['modal','jquery'], function(){
 
         //close function applied on the escape key link
 
-        $(document).on('keydown', function(event) {
+        $(document).keydown(function(event) {
             if (event.key == "Escape") {
                 modalCloseFunction();
             }

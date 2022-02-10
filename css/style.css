@@ -71,7 +71,7 @@ body {
 }
 
 section {
-  padding: 40px 20px;
+  margin: 16px 0;
 }
 
 .brdRnd, .btn, .txtFld, input[type="checkbox"] + label span,
@@ -111,6 +111,18 @@ input[type="radio"]:checked + label span {
   background: #0B0B0B;
 }
 
+h1 {
+  margin: 0 0 16px 0;
+}
+
+h2 {
+  margin: 0 0 16px 0;
+}
+
+h3 {
+  margin: 0 0 16px 0;
+}
+
 /* Custom scroll bar */
 ::-webkit-scrollbar {
   width: 10px;
@@ -143,11 +155,6 @@ input[type="radio"]:checked + label span {
   border: 2px solid #0B0B0B;
   border-radius: 5px;
   margin: 5px 0;
-}
-
-.acc.rndStyle li a:focus {
-  box-shadow: 0 0 0 1px #FFFFFF, 0 0 0 4px #00AFDB;
-  -webkit-box-shadow: 0 0 0 1px #FFFFFF, 0 0 0 4px #00AFDB;
 }
 
 .acc.rndStyle .accBtn {
@@ -214,10 +221,30 @@ input[type="radio"]:checked + label span {
   border: none;
 }
 
+.accBtn:focus {
+  box-shadow: none;
+  background: rgba(0, 175, 219, 0.1);
+}
+
 .accPnl {
   padding: 5px 0 20px;
   transition: none;
   display: none;
+}
+
+.breadcrumb li {
+  width: auto;
+}
+
+.breadcrumb li:after {
+  content: '/';
+  font-size: 12px;
+  padding: 0 8px;
+}
+
+.breadcrumb li:last-child:after {
+  content: '';
+  padding: 0;
 }
 
 .btn {
@@ -559,4 +586,17 @@ a:hover,
 
 .toTop:focus .icon {
   fill: #0B0B0B;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 16px;
+  float: none;
+}
+
+.container:after {
+  content: '';
+  clear: both;
+  display: table;
 }

@@ -17,6 +17,7 @@
 
 //Atoms such as buttons, fields
 @import 'atoms/_accordion';
+@import 'atoms/_breadcrumb';
 @import 'atoms/_button';
 @import 'atoms/_field';
 @import 'atoms/_option';
@@ -24,7 +25,6 @@
 @import 'atoms/_modalbox';
 @import 'atoms/_toTop';
 
-//Molecules such as label and fields
+//template such as page, etc.
+@import 'template/_layout';
 
-
-//organisms such as form

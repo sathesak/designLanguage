@@ -12,12 +12,6 @@
             border: 2px solid $black;
             border-radius: 5px;
             margin: 5px 0;
-
-            a{
-                &:focus{
-                    @include boxShadow(0 0 0 1px $white, 0 0 0 4px $focus);
-                }
-            }
         }
 
         .accBtn{
@@ -87,6 +81,11 @@
 
     &:hover{
         border: none;
+    }
+
+    &:focus{
+        box-shadow: none;
+        background: $focusHdr;
     }
 
 }
