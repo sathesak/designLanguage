@@ -4,13 +4,15 @@ define(['modal','jquery'], function(){
 
     modal = function(){
 
+        //Modal box trigger function
+
         var modalButton = $('[data-modalbtn]');
 
         modalButton.each(function(){
             var _this = $(this);
             var $id = _this.attr('data-modalbtn');
 
-            _this.click(function(){
+            _this.click(function(event){
                 event.preventDefault();
                 var scrollY = -window.scrollY;
                 $('body').css(
@@ -18,25 +20,25 @@ define(['modal','jquery'], function(){
                     'top':scrollY,
                     'position':'fixed'
                 });
-         
-                
-                $('[data-modalbox="' + $id + '"]').fadeIn();
 
+                var modalWrap = $('[data-modalwrap="' + $id + '"]');
+                var modalBox = modalWrap.find('[data-modalbox]');
+
+                modalWrap.fadeIn();
+                modalBox.focus();
+
+               
 
             });
             
-            console.log($id);
-
         });
 
-        var modalClose = $('[data-modalClose]');
+        //Modal close function
 
-        modalClose.click(function(){
-            event.preventDefault();
-
+        var modalCloseFunction = function(){
             var scrollY = document.body.style.top;
          
-            $('[data-modalbox]').fadeOut();
+            $('[data-modalwrap]').fadeOut();
             $('body').removeAttr('style');
 
             $('html').css({
@@ -44,10 +46,67 @@ define(['modal','jquery'], function(){
             });
 
             window.scrollTo(0,parseInt(scrollY || '0') * -1);
+        };
+
+        //close function applied on the close link
+        var modalClose = $('[data-modalclose]');
+
+        modalClose.click(function(event){
+            event.preventDefault();
+            
+            modalCloseFunction();
 
         });
-        
-        
+
+        //close function applied on the close link
+        var modaloverlay = $('[data-modaloverlay]');
+
+        modaloverlay.click(function(){
+
+            modalCloseFunction();
+
+        });
+
+
+        //close function applied on the escape key link
+
+        $(document).keydown(function(event) {
+            if (event.key == "Escape") {
+                modalCloseFunction();
+            }
+        });
+
+        //close bar sticky function
+
+        var modalBox = $('[data-modalbox]');
+
+        modalBox.scroll(function(){
+
+            var _this = $(this);
+
+            var bar = _this.find('[data-modalclosebar]');
+            var barHeight = bar.innerHeight();
+
+            var modalCopy = _this.find('.body');
+            var modalCopyOffset = modalCopy.offset().top + barHeight;
+
+
+            if (modalBox.scrollTop() > modalCopyOffset){
+                modalCopy.css({
+                    'margin-top':-barHeight
+                });
+                bar.addClass('sticky');
+            }
+
+            else if (modalBox.scrollTop() < modalCopyOffset){
+                modalCopy.css({
+                    'margin-top':0
+                });
+                bar.removeClass('sticky');
+            }
+
+        });
+
     }
 
     modal();

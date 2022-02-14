@@ -1,0 +1,19 @@
+.breadcrumb{
+    li{
+        width:auto;
+        
+        &:after{
+            content: '/';
+            font-size: 12px;
+            padding: 0 8px;
+        }
+
+        &:last-child{
+
+            &:after{
+                content:'';
+                padding: 0;
+            }
+        }
+    }
+}

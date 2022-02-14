@@ -71,7 +71,7 @@ body {
 }
 
 section {
-  padding: 40px 20px;
+  margin: 16px 0;
 }
 
 .brdRnd, .btn, .txtFld, input[type="checkbox"] + label span,
@@ -97,6 +97,7 @@ input[type="radio"] + label span, input[type="radio"].option + label {
 input[type="radio"]:focus + label span, input[type="radio"].option:focus + label, a:focus,
 .txtLnk:focus, .toTop:focus {
   box-shadow: 0 0 0 1px #FFFFFF, 0 0 0 4px #00AFDB;
+  -webkit-box-shadow: 0 0 0 1px #FFFFFF, 0 0 0 4px #00AFDB;
 }
 
 .hover, .btn:hover, .btn:focus, .txtFld:hover, .txtFld:focus, input[type="checkbox"] + label:hover span,
@@ -108,6 +109,38 @@ input[type="radio"] + label:hover span, input[type="radio"].option:hover + label
 .checked, input[type="checkbox"]:checked + label span,
 input[type="radio"]:checked + label span {
   background: #0B0B0B;
+}
+
+h1 {
+  margin: 0 0 16px 0;
+}
+
+h2 {
+  margin: 0 0 16px 0;
+}
+
+h3 {
+  margin: 0 0 16px 0;
+}
+
+/* Custom scroll bar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.8);
 }
 
 .acc li {
@@ -122,10 +155,6 @@ input[type="radio"]:checked + label span {
   border: 2px solid #0B0B0B;
   border-radius: 5px;
   margin: 5px 0;
-}
-
-.acc.rndStyle li a:focus {
-  box-shadow: 0 0 0 2px #0B0B0B, 0 0 0 3px #FFFFFF, 0 0 0 6px #00AFDB;
 }
 
 .acc.rndStyle .accBtn {
@@ -192,10 +221,30 @@ input[type="radio"]:checked + label span {
   border: none;
 }
 
+.accBtn:focus {
+  box-shadow: none;
+  background: rgba(0, 175, 219, 0.1);
+}
+
 .accPnl {
   padding: 5px 0 20px;
   transition: none;
   display: none;
+}
+
+.breadcrumb li {
+  width: auto;
+}
+
+.breadcrumb li:after {
+  content: '/';
+  font-size: 12px;
+  padding: 0 8px;
+}
+
+.breadcrumb li:last-child:after {
+  content: '';
+  padding: 0;
 }
 
 .btn {
@@ -428,16 +477,24 @@ a:hover,
   border-bottom: 2px solid #0B0B0B;
 }
 
-.overlay {
-  transition: none;
-  display: none;
+.modalWrap {
   position: fixed;
   top: 0;
   left: 0;
   min-width: 100%;
   min-height: 100%;
-  z-index: 9;
   background: rgba(0, 0, 0, 0.9);
+  transition: none;
+  display: none;
+  z-index: 9;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .modalbox {
@@ -446,29 +503,54 @@ a:hover,
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 600px;
-  max-height: calc(100vh - 60px);
+  max-height: calc(100% - 60px);
   background: #FFFFFF;
   border: 1px solid #0B0B0B;
   border-radius: 10px;
+  overflow-y: auto;
 }
 
 .modalbox > * {
   padding: 20px;
 }
 
-.modalbox .title {
+.modalbox:after {
+  content: '';
+  position: -moz-sticky;
+  position: -o-sticky;
+  position: -ms-sticky;
+  position: sticky;
+  bottom: 0;
   width: 100%;
+  height: 50px;
   background: #FFFFFF;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  box-shadow: 0 0 20px 20px #FFFFFF;
+  display: table;
+}
+
+.modalbox .title {
   font-weight: bold;
 }
 
-.modalbox .title .close {
+.modalbox .closeBar {
   position: absolute;
-  font-weight: normal;
-  float: none;
-  right: 20px;
+  top: 0;
+  transition: none;
+}
+
+.modalbox .closeBar.sticky {
+  position: -moz-sticky;
+  position: -o-sticky;
+  position: -ms-sticky;
+  position: sticky;
+  width: 100%;
+  background: #FFFFFF;
+  padding: 10px 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.modalbox .close {
+  float: right;
 }
 
 .toTop {
@@ -504,4 +586,17 @@ a:hover,
 
 .toTop:focus .icon {
   fill: #0B0B0B;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 16px;
+  float: none;
+}
+
+.container:after {
+  content: '';
+  clear: both;
+  display: table;
 }

@@ -1,25 +1,28 @@
 <section>
-    <h2>
-        Radio button
-    </h2>
+    <div class="container">
 
-    <fieldset>
-        <legend>
-            This is radio button
-        </legend>
+        <h2>
+            Radio button
+        </h2>
 
-        <ul>
-            <li>
-                <input type="radio" name="radio" id="radio">
-                <label for="radio"><span></span>Radio 1</label>
-            </li>
+        <fieldset>
+            <legend>
+                This is radio button
+            </legend>
 
-            <li>
-                <input type="radio" name="radio" id="radio2">
-                <label for="radio2"><span></span>Radio 2 this is more and more text goes here</label>
-            </li>
-        </ul>
+            <ul>
+                <li>
+                    <input type="radio" name="radio" id="radio">
+                    <label for="radio"><span></span>Radio 1</label>
+                </li>
 
-    </fieldset>
+                <li>
+                    <input type="radio" name="radio" id="radio2">
+                    <label for="radio2"><span></span>Radio 2 this is more and more text goes here</label>
+                </li>
+            </ul>
+
+        </fieldset>
     
+    </div>
 </section>

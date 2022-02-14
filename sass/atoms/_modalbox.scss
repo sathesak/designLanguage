@@ -1,19 +1,25 @@
-.overlay{
-    transition: none;
-
-    display: none;
-
-
+.modalWrap{
     position: fixed;
     top:0;
     left: 0;
     min-width: 100%;
     min-height: 100%;
-    
-    z-index: 9;
-
     background: rgba(0,0,0,0.9);
 
+    transition: none;
+
+    display: none;
+
+    z-index: 9;
+
+}
+
+.overlay{
+    position: absolute;
+    top:0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
 }
 
 .modalbox{
@@ -23,32 +29,52 @@
     transform: translate(-50%,-50%);
 
     max-width: 600px;
-    max-height: calc(100vh - 60px);
+    max-height: calc(100% - 60px);
 
     background: $white;
     border: 1px solid $black;
 
     border-radius: 10px;
 
+    overflow-y: auto;
+
     & > *{
         padding: 20px;
     }
 
-    .title{
+    &:after{
+        content:'';
+        @include sticky;
+        bottom: 0;
         width: 100%;
+        height: 50px;
         background: $white;
+        box-shadow: 0 0 20px 20px $white;
+        display: table;
+    }
 
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
+    .title{
         font-weight: bold;
+    }
 
-        .close{
-            position: absolute;
-            font-weight: normal;
-            float: none;
-            right: 20px;
+    .closeBar{
+        position: absolute;
+        top: 0;
+
+        transition: none;
+
+        &.sticky{
+            @include sticky;
+            width: 100%;
+            background: $white;
+            padding: 10px 20px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
         }
 
-
     }
+
+    .close{
+        float: right;
+    }
+
 }
